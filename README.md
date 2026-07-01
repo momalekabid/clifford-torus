@@ -1,4 +1,4 @@
-# clifford-torus
+# Clifford Torus distribution
 
 A PyTorch implementation of distributions on the Clifford torus `(S^1)^d`, as used by
 Clifford-VAE [1] to learn Holographic Reduced Representation (HRR) / Vector Symbolic
@@ -86,7 +86,7 @@ for the underlying `PowerSpherical` distribution we use:
   year={2020}
 }
 ```
-Optional memory optimizations can be implemented 
+Some optional memory optimizations implemented 
 [following this post.](https://evgeniia.tokarch.uk/blog/memory-optimization-for-kl-loss-calculation-in-pytorch/)
 
 ## Visualization
