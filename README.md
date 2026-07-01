@@ -5,9 +5,7 @@ Clifford-VAE [1] to learn Holographic Reduced Representation (HRR) / Vector Symb
 Algebra-compatible latent spaces.
 
 This distribution samples points on the  Clifford torus 
-`(S^1)^d ⊂ R^(2d)`. Sampling on it (rather than on `S^(d-1)` directly) guarantees every
-non-DC Fourier coefficient of the resulting vector has unit magnitude, i.e. the sample is
-"unitary" w.r.t FHRR/HRR/SSPs (thus vectors are exactly invertible under circular-convolution binding). This
+`(S^1)^d ⊂ R^(2d)`. This
 package also includes the `PowerSpherical` and `HypersphericalUniform` distributions
 (adapted from [nicola-decao/power_spherical](https://github.com/nicola-decao/power_spherical) [2]), since the Clifford torus's per-circle concentration can be parameterized with either a
 von Mises or a Power Spherical distribution.
@@ -90,6 +88,25 @@ for the underlying `PowerSpherical` distribution we use:
 ```
 Optional memory optimizations can be implemented 
 [following this post.](https://evgeniia.tokarch.uk/blog/memory-optimization-for-kl-loss-calculation-in-pytorch/)
+
+## Visualization
+
+![Stereographic projection of points on the Clifford torus](assets/clifford_torus_stereographic.gif)
+
+Stereographic projection of spheres centered at points on the Clifford torus inside the
+3-sphere, rotated in the `zw`-plane and projected down to `R^3`. From Clayton Shonkwiler's
+Wolfram Community post, ["[GIF] Inside (Stereographic projection of points on the Clifford
+torus)"](https://community.wolfram.com/groups/-/m/t/1245707).
+
+```bibtex
+@misc{shonkwiler2017inside,
+  title={[GIF] Inside (Stereographic projection of points on the Clifford torus)},
+  author={Shonkwiler, Clayton},
+  howpublished={Wolfram Community},
+  year={2017},
+  url={https://community.wolfram.com/groups/-/m/t/1245707}
+}
+```
 
 ## License
 
