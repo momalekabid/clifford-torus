@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clifford-torus"
-version = "0.1.0"
+version = "0.1.1"
 description = "PyTorch distributions on the Clifford torus (S^1)^d for HRR/VSA-compatible latent spaces"
 readme = "README.md"
 license = "MIT"

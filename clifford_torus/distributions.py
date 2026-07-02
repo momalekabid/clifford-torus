@@ -293,10 +293,11 @@ class CliffordPowerSphericalDistribution(CliffordTorusDistribution):
         self.dtype = loc.dtype
 
     def rsample(self, sample_shape=torch.Size()) -> torch.Tensor:
-        mean_dir = torch.stack((torch.cos(self.loc), torch.sin(self.loc)), -1)
-        ps = PowerSpherical(mean_dir, self.concentration)
+        e1 = torch.zeros((*self.loc.shape, 2), device=self.loc.device, dtype=self.dtype)
+        e1[..., 0] = 1
+        ps = PowerSpherical(e1, self.concentration)
         v = ps.rsample(sample_shape)
-        theta = torch.atan2(v[..., 1], v[..., 0])
+        theta = self.loc + torch.atan2(v[..., 1], v[..., 0])
         n = 2 * self.orig_dim
         theta_s = torch.zeros(
             (*theta.shape[:-1], n), device=theta.device, dtype=self.dtype
